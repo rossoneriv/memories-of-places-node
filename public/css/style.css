@@ -1,0 +1,32 @@
+/* body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+} */
+
+a {
+  color: #00B7FF;
+}
+
+span.require {
+  color: red;
+  font-size: 10px;
+  padding: 0 3px 0 3px;
+}
+
+.help-block {
+  font-size: 11px;
+  color: red;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+/* kakao button */
+.kakaoButton {
+  background-color: #fd0;
+}
+
+.kakaoIcon {
+  width: 25px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Memories of places</title>
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="/css/modern-business.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+
+<body>
+
+  <%- include('./header.ejs') %>
+
+  <div class="container" style='min-height: 700px;'>
+    <h1 class="mt-4 mb-3">회원가입</h1>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4"></div>
+      <div class="col-lg-4 mb-4">
+        <form name="joinFormName" id="joinForm" data-form-type="join">
+          <div class="control-group form-group">
+            <div class="controls">
+              <label><span class="require">*</span>ID:</label>
+              <input type="text" class="form-control require" id="username" placeholder="Please enter your ID.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label><span class="require">*</span>Password:</label>
+              <input type="password" class="form-control require" id="password" placeholder="Please enter your password.">
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label><span class="require">*</span>Nickname:</label>
+              <input type="text" class="form-control require" id="nickname" placeholder="">
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label><span class="require">*</span>email:</label>
+              <input type="email" class="form-control require" id="email" placeholder="">
+              <p class="help-block"></p>
+            </div>
+          </div>
+          <div id="success"></div>
+        </form>
+        <div class="alignCenter">
+          <button class="btn btn-primary" id="joinButton"><i class="fas fa-user-plus"></i> 회원가입</button>
+        </div>
+        <br>
+      </div>
+      <div class="col-lg-4 mb-4"></div>
+    </div>
+
+  </div>
+
+  <%- include('./footer.ejs') %>
+
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/join.js"></script>
+
+</body>
+
+</html>

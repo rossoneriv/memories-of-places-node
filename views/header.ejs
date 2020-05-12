@@ -1,0 +1,46 @@
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Memories of Places</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto" id="isNotLoggedIn">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/start">get started</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" id="isLoggedIn" style="display:none;">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+              <a class="dropdown-item" href="/users/modi">개인정보수정</a>
+              <a class="dropdown-item" href="/users/logout">로그아웃</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <% if(loginUser) { %>
+    <script>
+      var loginUser = {
+        id: '<%= loginUser.id %>' ,
+        nickname: '<%= loginUser.nickname %>',
+        email : '<%= loginUser.email %>'
+      };
+    </script>
+  <% } %>
+
+<script>
+  if(typeof loginUser !== 'undefined' && loginUser !== null){
+    document.querySelector('#isNotLoggedIn').style.display = 'none';
+    document.querySelector('#isLoggedIn').style.display = 'block';
+    document.querySelector('#navbarDropdownUserMenu').innerHTML = `환영합니다. <b>${loginUser.nickname}</b>님`;
+  }
+</script>

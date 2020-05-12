@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Memories of places</title>
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <!-- https://startbootstrap.com/templates/modern-business/ -->
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/modern-business.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <%- include('./header.ejs') %>
+
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" style="background-image: url('/img/intro1.jpg');">
+          <div class="carousel-caption d-none d-md-block" style="background: rgba(0, 0, 0, 0.3);">
+            <h3>Memories of Places</h3>
+            <p>당신의 추억을 지도에 기록하세요.</p>
+          </div>
+        </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1 class="my-4">Welcome to Memories of Places</h1>
+
+    <div class="row">
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <img class="card-img-top" src="/img/intro2.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <p class="card-text">
+              <b>당신의 추억이 있는 장소를 검색하여 지도에 표시해보세요.</b>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <img class="card-img-top" src="/img/intro3.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <p class="card-text">
+              <b>기록된 장소에 대한 날짜와 추억을 사진과 함께 기록해보세요.</b>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <img class="card-img-top" src="/img/intro4.jpg" alt="">
+          <div class="card-body">
+            <h4 class="card-title">
+            </h4>
+            <p class="card-text">
+              <b>기록된 추억을 키워드 별로 검색하여 다시 떠올려보세요.</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Features</h2>
+        <ul>
+          <li><strong>Express - Node.js</strong></li>
+          <li>mysql</li>
+          <li>Vanilla javascript(Very little JQuery for bootstrap)</li>
+          <li>kakao Map Javascript Api</li>
+          <li>amazon S3</li>
+          <li>Bootstrap v4</li>
+          <li>...and so on</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr>
+
+  </div>
+
+  <%- include('./footer.ejs') %>
+
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

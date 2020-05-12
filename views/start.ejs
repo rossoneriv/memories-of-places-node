@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Memories of places</title>
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="/css/modern-business.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+
+<body>
+
+  <%- include('./header.ejs') %>
+
+  <div class="container" style='min-height: 700px;'>
+
+    <h1 class="mt-4 mb-3">로그인<small> / 회원가입</small>
+    </h1>
+
+    <div class="row">
+      <div class="col-lg-4 mb-4"></div>
+      <div class="col-lg-4 mb-4">
+        <h3>로그인</h3>
+        <form name="loginFormName" id="loginForm" method="POST" action="/users/login">
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>ID:</label>
+              <input type="text" class="form-control" name="username" placeholder="Please enter your ID.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Password:</label>
+              <input type="password" class="form-control" name="password" placeholder="Please enter your password.">
+            </div>
+          </div>
+          <% if ( loginError.length > 0 ) { %>
+            <p class="help-block">Message: <%= loginError %> </p>
+          <% } %>
+          <div id="success"></div>
+          <button type="submit" class="btn btn-primary" id="loginButton"><i class="fas fa-sign-in-alt"></i> 로그인</button>
+          <button class="btn btn-default kakaoButton" id="kakaoLoginButton" disabled>
+            <img data-v-509a9535="" src="https://assets.jienem.com/images/volo-new-web/ico/ico-start-kakao@3x.png" class="platform-ico kakaoIcon">카카오 로그인</button>
+        </form>
+        <br>
+        <p><small><b>이곳이 처음이세요?</b><br><a href="/users/join">회원가입</a> / 카카오 계정으로 회원가입</small></p>
+      </div>
+      <div class="col-lg-4 mb-4"></div>
+    </div>
+
+  </div>
+
+  <%- include('./footer.ejs') %>
+
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

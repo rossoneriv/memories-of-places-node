@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Memories of places</title>
+  <link rel="shortcut icon" href="/img/favicon.ico">
+
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+  <link href="/css/modern-business.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/map.css">
+  <link rel="stylesheet" type="text/css" href="/css/modal.css">
+</head>
+
+<body>
+
+  <%- include('./header.ejs') %>
+
+  <div class="container">
+    <div class="map_wrap">
+        <div id="map" style="height:500px;"></div>
+        <div id="menu_wrap" class="bg_white">
+            <div class="option">
+                <div>
+                    <form onsubmit="searchPlaces(); return false;">
+                        키워드 : <input type="text" value="" id="keyword" size="15">
+                        <button type="submit">검색하기</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <ul id="placesList"></ul>
+            <div id="pagination"></div>
+        </div>
+        <div class="memList"></div>
+    </div>
+    <div id="modal_wrap"></div>
+    <h1 class="mt-4 mb-3">Memories
+      <small style="font-size: 50%;">장소의 추억을 뒤돌아봅니다.</small>
+    </h1>
+
+    <div class="row">
+
+      <div class="col-md-8" id="divMemories">
+
+        <div class="card mb-4" id="noList">
+            <div class="card-body" style="text-align: center;">
+                <h3 class="card-title" >기록된 추억이 없습니다</h2>
+                <span>지도를 통해 당신의 추억의 장소를 기록해보세요</span>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <!-- <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul> -->
+
+      </div>
+
+      <div class="col-md-4">
+        
+        <div class="card mb-4">
+          <h5 class="card-header">Keyword Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" class="form-control" id="searchInput" placeholder="Search for..." onkeypress="javascript:if(event.keyCode==13){memoryInfo.searchMemoryParam('01','')}">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" onclick="memoryInfo.searchMemoryParam('01','')">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card my-4">
+          <h5 class="card-header">DateRange Search</h5>
+          <div class="card-body">
+            <div class="input-group">
+              <input type="text" id="datePicker" class="form-control" readonly style="background-color: white;">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" onclick="memoryInfo.searchMemoryParam('02','')">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card my-4">
+          <h5 class="card-header">Place Keywords</h5>
+          <div class="card-body">
+            <div class="row" id="divKeywords">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <%- include('./footer.ejs') %>
+
+  <script src="/jquery/jquery.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d697a41efb92b2d9beaafe1638750478&libraries=services,clusterer,drawing"></script>
+  <script type="text/javascript" src="/js/dynamicMap.js"></script>
+  <script type="text/javascript" src="/js/registerModal.js"></script>
+  <script type="text/javascript" src="/js/memoryModal.js"></script>
+  <script type="text/javascript" src="/js/memoryInfo.js"></script>
+
+  <script>
+    let container = document.getElementById('map');
+    let options = {
+        center: new kakao.maps.LatLng(37.567139, 126.978674),
+        level: 3
+    };
+
+    let map = new kakao.maps.Map(container, options);
+    let placeService = new kakao.maps.services.Places();
+    let infowindow = new kakao.maps.InfoWindow({zIndex: 1});
+
+    function searchPlaces(){
+        dynamicMap.searchPlaces();
+    }
+
+    $('#datePicker').daterangepicker({
+      locale: {
+        format: 'YYYY-MM-DD',
+        separator: '  ~  '
+      }
+    }); 
+    
+    memoryInfo.init();
+    
+    
+  </script>
+</body>
+
+</html>

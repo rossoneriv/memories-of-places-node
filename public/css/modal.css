@@ -1,0 +1,55 @@
+    .img-wrap {
+        position: relative;
+        display: inline-block;
+        font-size: 0;
+    }
+    .img-wrap .delImg {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        z-index: 100;
+        /* background-color: #FFF; */
+        padding: 5px 2px 2px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: .1;
+        text-align: center;
+        font-size: 22px;
+        line-height: 10px;
+        border-radius: 50%;
+        border-color: red;
+    }
+    .img-wrap:hover .delImg {
+        opacity: 1;
+    }
+
+    span.delImg{
+        text-shadow: 
+            /* first layer at 1px */
+            -1px -1px 0px #000,
+            0px -1px 0px #000,
+            1px -1px 0px #000,
+            -1px  0px 0px #000,
+            1px  0px 0px #000,
+            -1px  1px 0px #000,
+            0px  1px 0px #000,
+            1px  1px 0px #000,
+            /* second layer at 2px */
+            -2px -2px 0px #000,
+            -1px -2px 0px #000,
+            0px -2px 0px #000,
+            1px -2px 0px #000,
+            2px -2px 0px #000,
+            2px -1px 0px #000,
+            2px  0px 0px #000,
+            2px  1px 0px #000,
+            2px  2px 0px #000,
+            1px  2px 0px #000,
+            0px  2px 0px #000,
+            -1px  2px 0px #000,
+            -2px  2px 0px #000,
+            -2px  1px 0px #000,
+            -2px  0px 0px #000,
+            -2px -1px 0px #000;
+    } 
