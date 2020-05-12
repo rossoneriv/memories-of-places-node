@@ -10,6 +10,8 @@ const session = require('express-session');
 const passportConfig = require('./config/passport.js');
 const flash = require('connect-flash');
 const dotenv = require('dotenv');
+const helmet = require('helmet');
+const hpp = require('hpp');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -21,6 +23,8 @@ if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === '') {
   dotenv.config();
 } else if (process.env.NODE_ENV === 'production') {
   dotenv.config();
+  app.use(helmet());
+  app.use(hpp());
 } else {
   throw new Error('process.env.NODE_ENV를 설정하지 않았습니다!');
 }
