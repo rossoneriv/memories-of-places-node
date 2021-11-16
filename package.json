@@ -7,7 +7,7 @@
     "start": "cross-env NODE_ENV=production PORT=80 pm2 start ./bin/www -i 0"
   },
   "dependencies": {
-    "aws-sdk": "^2.672.0",
+    "aws-sdk": "^2.814.0",
     "bcrypt": "^4.0.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
